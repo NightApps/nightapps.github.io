@@ -10,6 +10,9 @@
 --night-blue:#0054aa;
 --night-violet:#7800aa;
 --night-pink:#d100b1;
+--night-grey:#1d1d1d;
+--night-grey2:#212121;
+--night-grey3:#262626;
 }
 #pi {
   width: 50%;
@@ -24,13 +27,13 @@
 }
 </style>
 </head>
-<body>
+<body onload="changePiColor()">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  id="pi" height="300.000000pt" viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
  stroke="none">
-<path d="M0 2585 l0 -235 240 0 240 0 0 -1040 0 -1040 235 0 235 0 0 1040 0
+<path onclick="changePiColor()" d="M0 2585 l0 -235 240 0 240 0 0 -1040 0 -1040 235 0 235 0 0 1040 0
 1040 454 0 455 0 4 -652 c3 -630 4 -656 26 -751 44 -197 132 -381 234 -493
 104 -114 269 -205 437 -240 90 -20 358 -27 413 -11 l27 7 0 204 0 203 -97 6
 c-169 11 -292 55 -389 141 -80 71 -149 220 -173 376 -8 48 -16 955 -11 1188
@@ -38,10 +41,14 @@ l0 22 305 0 305 0 0 235 0 235 -1470 0 -1470 0 0 -235z"/>
 </g>
 </svg>
 <script>
+function changePiColor(){
+var bgColors = ["grey", "grey2", "grey3"];
 var nightColors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet", "pink"];
 var piColor = nightColors[Math.floor(Math.random()*nightColors.length)];
 document.getElementById("pi").style.fill='var(--night-'+piColor+')';
+document.getElementsByTagName("body")[0].style.background='var(--night-'+bgColors[Math.floor(Math.random()*bgColors.length)]+')';
 //document.getElementById("pi").style.fill=piColor;
+}
 </script>
 </body>
 </html>
