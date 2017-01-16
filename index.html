@@ -1,14 +1,35 @@
 <html>
 <head>
-html, body { margin:0; padding:0; overflow:hidden }
-svg { position:fixed; top:0; left:0; height:90%; width:90% }
+<style>
+:root{
+--night-red:#aa1400;
+--night-orange:#d15900;
+--night-yellow:#d1bb00;
+--night-green:#24aa00;
+--night-cyan:#00a0aa;
+--night-blue:#0054aa;
+--night-violet:#7800aa;
+--night-pink:#d100b1;
+}
+#pi {
+  width: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+  fill
+}
+</style>
 </head>
 <body>
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="300.000000pt" id="pi" height="300.000000pt" viewBox="0 0 300.000000 300.000000"
+ id="pi" height="300.000000pt" viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)"
-fill="#0054aa" stroke="none">
+ stroke="none">
 <path d="M0 2585 l0 -235 240 0 240 0 0 -1040 0 -1040 235 0 235 0 0 1040 0
 1040 454 0 455 0 4 -652 c3 -630 4 -656 26 -751 44 -197 132 -381 234 -493
 104 -114 269 -205 437 -240 90 -20 358 -27 413 -11 l27 7 0 204 0 203 -97 6
@@ -16,6 +37,11 @@ c-169 11 -292 55 -389 141 -80 71 -149 220 -173 376 -8 48 -16 955 -11 1188
 l0 22 305 0 305 0 0 235 0 235 -1470 0 -1470 0 0 -235z"/>
 </g>
 </svg>
-A!
+<script>
+var nightColors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet", "pink"];
+var piColor = nightColors[Math.floor(Math.random()*nightColors.length)];
+document.getElementById("pi").style.fill='var(--night-'+piColor+')';
+//document.getElementById("pi").style.fill=piColor;
+</script>
 </body>
 </html>
