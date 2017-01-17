@@ -1,33 +1,9 @@
 <html>
 <head>
-<style>
-:root{
---night-red:#aa1400;
---night-orange:#d15900;
---night-yellow:#d1bb00;
---night-green:#24aa00;
---night-cyan:#00a0aa;
---night-blue:#0054aa;
---night-violet:#7800aa;
---night-pink:#d100b1;
---night-grey:#1d1d1d;
---night-grey2:#212121;
---night-grey3:#262626;
-}
-#pi {
-  width: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  padding: 20px;
-  resize: both;
-  overflow: auto;
-  fill
-}
-</style>
+<link href="css/index.css" rel="stylesheet">
 </head>
-<body onload="changePiColor()">
+<body bgcolor="#1d1d1d" onload="changePiColor()">
+
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  id="pi" height="300.000000pt" viewBox="0 0 300.000000 300.000000"
  preserveAspectRatio="xMidYMid meet">
@@ -40,13 +16,29 @@ c-169 11 -292 55 -389 141 -80 71 -149 220 -173 376 -8 48 -16 955 -11 1188
 l0 22 305 0 305 0 0 235 0 235 -1470 0 -1470 0 0 -235z"/>
 </g>
 </svg>
+<h3 class="main">tt-gen&emsp;norse sync&emsp;telegram bot<br>
+telegram channel&emsp;<a href="https://night.tf">website</a></h3>
 <script>
 function changePiColor(){
+dupCheck = localStorage.getItem('dupCheck');
 var bgColors = ["grey", "grey2", "grey3"];
 var nightColors = ["red", "orange", "yellow", "green", "cyan", "blue", "violet", "pink"];
 var piColor = nightColors[Math.floor(Math.random()*nightColors.length)];
+var bgColor = bgColors[Math.floor(Math.random()*bgColors.length)];
+if (dupCheck == piColor+bgColor) changePiColor();
 document.getElementById("pi").style.fill='var(--night-'+piColor+')';
-document.getElementsByTagName("body")[0].style.background='var(--night-'+bgColors[Math.floor(Math.random()*bgColors.length)]+')';
+document.getElementsByTagName("body")[0].style.background='var(--night-'+bgColor+')';
+localStorage.setItem('dupCheck', piColor+bgColor);
+var css = 'a:hover,a:active{ color:var(--night-'+piColor+')}';
+style = document.createElement('style');
+document.getElementsByTagName('head')[0].appendChild(style);
+if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+} else {
+    style.appendChild(document.createTextNode(css));
+}
+
+document.getElementsByTagName('head')[0].appendChild(style);
 //document.getElementById("pi").style.fill=piColor;
 }
 </script>

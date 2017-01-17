@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root{
+--night-red:#aa1400;
+--night-orange:#d15900;
+--night-yellow:#d1bb00;
+--night-green:#24aa00;
+--night-cyan:#00a0aa;
+--night-blue:#0054aa;
+--night-violet:#7800aa;
+--night-pink:#d100b1;
+--night-grey:#1d1d1d;
+--night-grey2:#212121;
+--night-grey3:#262626;
+
+font-family: 'Roboto', sans-serif;
+}
+#pi{
+  width: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  padding: 20px;
+  resize: both;
+  overflow: auto;
+}
+body, #pi{
+transition: fill 0.2s;
+transition: background 0.2s;
+}
+.main{
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  resize: both;
+  overflow: auto;
+  color:#ededed;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 30px;
+}
+a:link, a:visited{
+color: #ededed;
+text-decoration: none;
+}
