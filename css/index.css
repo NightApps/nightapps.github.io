@@ -44,4 +44,5 @@ transition: background 0.2s;
 a:link, a:visited{
 color: #ededed;
 text-decoration: none;
+transition: color 0.2s;
 }
